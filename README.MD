@@ -10,7 +10,17 @@ Este proyecto utiliza un **Selenium MCP Server** para crear automatizaciones de 
 - 🔧 **Auto-reparación**: Capacidad de detectar y reparar escenarios de prueba fallidos automáticamente
 - 📋 **BDD con Behave**: Implementación de pruebas usando el framework Behave para Python
 - 🏗️ **Page Object Model**: Arquitectura de pruebas siguiendo el patrón POM para mejor mantenibilidad
-- 🔌 **Integración MCP**: Utiliza el Selenium MCP Server para interactuar con navegadores mediante herramientas MCP
+- 🔌 **Integración MCP**: Utiliza el Selenium MCP Server para interactuar con navegadores mediante herramientas MCP 
+
+### Video Demo
+
+Puedes ver un ejemplo práctico de cómo funciona este proyecto en el siguiente video:
+
+[![Video Demo](https://img.youtube.com/vi/sl6dP2ICw4c/0.jpg)](https://youtu.be/sl6dP2ICw4c)
+
+**Enlace directo**: [Ver video en YouTube](https://youtu.be/sl6dP2ICw4c)
+
+El video muestra un ejemplo breve de cómo se utiliza el Selenium MCP Server para crear automatizaciones con BDD y el patrón Page Object Model.
 
 ## Arquitectura del Proyecto
 
@@ -137,6 +147,7 @@ Execute the steps described in the sign_in.feature file in Chrome using selenium
 
 After creating the step definitions and page models, run the command behave features/sign_in.feature to test the correct operation of the created code. If it fails, repair the test.
 ```
+
 
 ## Estructura de Page Objects
 
