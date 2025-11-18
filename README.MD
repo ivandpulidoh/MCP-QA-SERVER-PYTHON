@@ -1,72 +1,72 @@
-# Selenium MCP Server - Test Automation con BDD y Page Object Model
+# Selenium MCP Server - Test Automation with BDD and Page Object Model
 
-## Descripción del Proyecto
+## Project Description
 
-Este proyecto utiliza un **Selenium MCP Server** para crear automatizaciones de pruebas utilizando **Behavior-Driven Development (BDD)**, **Python** y el patrón **Page Object Model (POM)**. El sistema es capaz de construir una automatización completa utilizando únicamente los pasos descritos en un archivo de características (feature), y cuenta con la capacidad de reparar automáticamente escenarios rotos.
+This project uses a **Selenium MCP Server** to create test automations using **Behavior-Driven Development (BDD)**, **Python**, and the **Page Object Model (POM)** pattern. The system is capable of building a complete automation using only the steps described in a feature file, and has the ability to automatically repair broken scenarios.
 
-### Características Principales
+### Main Features
 
-- 🤖 **Automatización Inteligente**: Genera código de automatización a partir de descripciones en lenguaje natural (Gherkin)
-- 🔧 **Auto-reparación**: Capacidad de detectar y reparar escenarios de prueba fallidos automáticamente
-- 📋 **BDD con Behave**: Implementación de pruebas usando el framework Behave para Python
-- 🏗️ **Page Object Model**: Arquitectura de pruebas siguiendo el patrón POM para mejor mantenibilidad
-- 🔌 **Integración MCP**: Utiliza el Selenium MCP Server para interactuar con navegadores mediante herramientas MCP 
+- 🤖 **Intelligent Automation**: Generates automation code from natural language descriptions (Gherkin)
+- 🔧 **Auto-repair**: Ability to detect and automatically repair failed test scenarios
+- 📋 **BDD with Behave**: Test implementation using the Behave framework for Python
+- 🏗️ **Page Object Model**: Test architecture following the POM pattern for better maintainability
+- 🔌 **MCP Integration**: Uses the Selenium MCP Server to interact with browsers through MCP tools
 
 ### Video Demo
 
-Puedes ver un ejemplo práctico de cómo funciona este proyecto en el siguiente video:
+You can see a practical example of how this project works in the following video:
 
-[![Video Demo](https://img.youtube.com/vi/sl6dP2ICw4c/0.jpg)](https://youtu.be/sl6dP2ICw4c)
+[![Video Demo](https://img.youtube.com/vi/3d_phRen8Hk/0.jpg)](https://youtu.be/3d_phRen8Hk)
 
-**Enlace directo**: [Ver video en YouTube](https://youtu.be/sl6dP2ICw4c)
+**Direct link**: [Watch video on YouTube](https://youtu.be/3d_phRen8Hk)
 
-El video muestra un ejemplo breve de cómo se utiliza el Selenium MCP Server para crear automatizaciones con BDD y el patrón Page Object Model.
+The video shows a brief example of how the Selenium MCP Server is used to create automations with BDD and the Page Object Model pattern.
 
-## Arquitectura del Proyecto
+## Project Architecture
 
 ```
 mcp-qa-server-python/
-├── features/                    # Archivos de características BDD (Gherkin)
-│   ├── sign_in.feature         # Ejemplo de feature para registro en utest.com
-│   └── steps/                  # Definiciones de pasos (step definitions)
-├── pages/                       # Page Objects siguiendo el patrón POM
-│   └── base_page.py            # Clase base para todos los page objects
-├── selenium_mcp_server/        # Referencias al servidor MCP
-├── requirements.txt            # Dependencias del proyecto
-├── behave.ini                  # Configuración de Behave
-└── README.MD                   # Este archivo
+├── features/                    # BDD feature files (Gherkin)
+│   ├── sign_in.feature         # Example feature for registration on utest.com
+│   └── steps/                  # Step definitions
+├── pages/                       # Page Objects following the POM pattern
+│   └── base_page.py            # Base class for all page objects
+├── selenium_mcp_server/        # MCP server references
+├── requirements.txt            # Project dependencies
+├── behave.ini                  # Behave configuration
+└── README.MD                   # This file
 ```
 
-## Tecnologías Utilizadas
+## Technologies Used
 
-- **Python**: Lenguaje de programación principal
-- **Selenium**: Framework de automatización web
-- **Behave**: Framework BDD para Python
-- **WebDriver Manager**: Gestión automática de drivers de navegador
-- **MCP (Model Context Protocol)**: Protocolo para comunicación con el servidor Selenium
+- **Python**: Main programming language
+- **Selenium**: Web automation framework
+- **Behave**: BDD framework for Python
+- **WebDriver Manager**: Automatic browser driver management
+- **MCP (Model Context Protocol)**: Protocol for communication with the Selenium server
 
-## Instalación y Configuración
+## Installation and Configuration
 
-### Requisitos Previos
+### Prerequisites
 
-- Python 3.7 o superior
-- Navegador Chrome instalado
-- Acceso a internet para descargar drivers
+- Python 3.7 or higher
+- Chrome browser installed
+- Internet access to download drivers
 
-### Pasos de Instalación
+### Installation Steps
 
-1. **Clonar el repositorio** (si aplica):
+1. **Clone the repository** (if applicable):
    ```bash
-   git clone <url-del-repositorio>
+   git clone <repository-url>
    cd mcp-qa-server-python
    ```
 
-2. **Crear un entorno virtual** (recomendado):
+2. **Create a virtual environment** (recommended):
    ```bash
    python -m venv venv
    ```
 
-3. **Activar el entorno virtual**:
+3. **Activate the virtual environment**:
    - Windows:
      ```bash
      venv\Scripts\activate
@@ -76,47 +76,47 @@ mcp-qa-server-python/
      source venv/bin/activate
      ```
 
-4. **Instalar dependencias**:
+4. **Install dependencies**:
    ```bash
    pip install -r requirements.txt
    ```
 
-### Dependencias
+### Dependencies
 
-El proyecto requiere las siguientes dependencias (ver `requirements.txt`):
+The project requires the following dependencies (see `requirements.txt`):
 
-- `behave==1.2.6`: Framework BDD para Python
-- `selenium==4.15.2`: Framework de automatización web
-- `webdriver-manager==4.0.1`: Gestión automática de drivers
+- `behave==1.2.6`: BDD framework for Python
+- `selenium==4.15.2`: Web automation framework
+- `webdriver-manager==4.0.1`: Automatic driver management
 
-## Cómo Funciona
+## How It Works
 
-### Flujo de Trabajo
+### Workflow
 
-El proceso de automatización sigue estos pasos:
+The automation process follows these steps:
 
-1. **Definición de Escenarios**: Se crea un archivo `.feature` con los escenarios de prueba en lenguaje Gherkin
+1. **Scenario Definition**: A `.feature` file is created with test scenarios in Gherkin language
    
-2. **Ejecución con MCP Server**: El cliente MCP LLM (Cursor, Visual Studio Code, etc.) utiliza las herramientas del Selenium_MCP_Server para:
-   - Abrir un navegador
-   - Navegar a URLs
-   - Interactuar con elementos (clic, escritura, selección)
-   - Validar estados de la página
+2. **Execution with MCP Server**: The MCP LLM client (Cursor, Visual Studio Code, etc.) uses the Selenium_MCP_Server tools to:
+   - Open a browser
+   - Navigate to URLs
+   - Interact with elements (click, type, select)
+   - Validate page states
 
-3. **Generación de Código**: El LLM recupera los selectores utilizados y genera:
-   - **Page Objects**: Clases que representan las páginas web siguiendo el patrón POM
-   - **Step Definitions**: Implementaciones de los pasos definidos en los archivos feature
+3. **Code Generation**: The LLM retrieves the selectors used and generates:
+   - **Page Objects**: Classes that represent web pages following the POM pattern
+   - **Step Definitions**: Implementations of the steps defined in the feature files
 
-4. **Ejecución y Validación**: Se ejecuta el test con el comando:
+4. **Execution and Validation**: The test is executed with the command:
    ```bash
    behave features/sign_in.feature
    ```
 
-5. **Auto-reparación**: Si el test falla, el sistema intenta reparar automáticamente el escenario hasta que funcione correctamente
+5. **Auto-repair**: If the test fails, the system attempts to automatically repair the scenario until it works correctly
 
-### Ejemplo de Uso
+### Usage Example
 
-#### Archivo Feature (Gherkin)
+#### Feature File (Gherkin)
 
 ```gherkin
 Feature: Register on the utest.com website
@@ -140,7 +140,7 @@ Feature: Register on the utest.com website
         Then I wait for the page "https://utest.com/signup/address" to load
 ```
 
-#### Prompt para el LLM
+#### Prompt for the LLM
 
 ```
 Execute the steps described in the sign_in.feature file in Chrome using selenium-mcp-server and create the step definitions using the selectors you use to follow them; create the necessary page objects following the Page Object Model pattern.
@@ -149,49 +149,49 @@ After creating the step definitions and page models, run the command behave feat
 ```
 
 
-## Estructura de Page Objects
+## Page Objects Structure
 
-El proyecto utiliza el patrón Page Object Model para organizar el código:
+The project uses the Page Object Model pattern to organize the code:
 
 ### BasePage
 
-La clase `BasePage` proporciona funcionalidades comunes para todos los page objects:
+The `BasePage` class provides common functionality for all page objects:
 
-- `wait_for_url()`: Espera a que la URL coincida con la esperada
-- `wait_for_element()`: Espera a que un elemento esté presente
-- `wait_for_element_clickable()`: Espera a que un elemento sea clickeable
+- `wait_for_url()`: Waits for the URL to match the expected one
+- `wait_for_element()`: Waits for an element to be present
+- `wait_for_element_clickable()`: Waits for an element to be clickable
 
-Todos los page objects heredan de `BasePage` para mantener consistencia y reutilización de código.
+All page objects inherit from `BasePage` to maintain consistency and code reusability.
 
-## Ejecución de Pruebas
+## Test Execution
 
-### Ejecutar un Feature Específico
+### Run a Specific Feature
 
 ```bash
 behave features/sign_in.feature
 ```
 
 
-## Integración con Selenium MCP Server
+## Integration with Selenium MCP Server
 
-Este proyecto utiliza el [Selenium MCP Server](https://github.com/KiranMote/Selenium_MCP_Server) que proporciona herramientas MCP para:
+This project uses the [Selenium MCP Server](https://github.com/KiranMote/Selenium_MCP_Server) which provides MCP tools for:
 
-- Iniciar y controlar navegadores
-- Navegar a URLs
-- Interactuar con elementos de la página
-- Capturar screenshots
-- Validar presencia de elementos
-- Y muchas otras operaciones de automatización web
+- Starting and controlling browsers
+- Navigating to URLs
+- Interacting with page elements
+- Capturing screenshots
+- Validating element presence
+- And many other web automation operations
 
-## Ventajas del Enfoque
+## Advantages of This Approach
 
-1. **Mantenibilidad**: El código está organizado siguiendo patrones establecidos (POM)
-2. **Legibilidad**: Los tests se escriben en lenguaje natural (Gherkin)
-3. **Reutilización**: Los page objects pueden ser reutilizados en múltiples tests
-4. **Automatización Inteligente**: El LLM puede generar y reparar código automáticamente
-5. **Escalabilidad**: Fácil agregar nuevos features y escenarios
+1. **Maintainability**: Code is organized following established patterns (POM)
+2. **Readability**: Tests are written in natural language (Gherkin)
+3. **Reusability**: Page objects can be reused across multiple tests
+4. **Intelligent Automation**: The LLM can generate and repair code automatically
+5. **Scalability**: Easy to add new features and scenarios
 
-## Referencias
+## References
 
 - [Selenium MCP Server](https://github.com/KiranMote/Selenium_MCP_Server)
 - [Behave Documentation](https://behave.readthedocs.io/)
