@@ -1,0 +1,1 @@
+MCP_SERVER: https://github.com/KiranMote/Selenium_MCP_Server
